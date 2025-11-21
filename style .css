@@ -1,0 +1,113 @@
+:root{
+  --gold: #b8861b;
+  --muted:#7d7d7d;
+  --bg:#faf9f7;
+  --card:#fff3e8;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+body{
+  font-family: "Poppins", sans-serif;
+  color:#222;
+  line-height:1.5;
+  background:#fff;
+}
+.container{
+  width:90%;
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+/* HEADER */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid #f0f0f0;
+  position:sticky; top:0; z-index:30;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 0;
+}
+.logo{font-weight:700; font-size:22px; color:#111}
+.main-nav a{
+  margin:0 14px; text-decoration:none; color:var(--muted); font-weight:500;
+}
+.icons{color:var(--muted)}
+
+/* HERO */
+.hero{position:relative; height:78vh; overflow:hidden}
+.hero-bg{width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.98)}
+.hero-card{
+  position:absolute; right:8%; top:50%; transform:translateY(-50%);
+  background:var(--card); padding:40px; width:380px; border-radius:10px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+.hero-card .muted{color:var(--muted); margin-bottom:8px; font-size:13px}
+.hero-card h1{color:var(--gold); font-size:34px; margin-bottom:12px; line-height:1.05}
+.lead{color:#555; margin-bottom:20px}
+.btn{
+  background:var(--gold); color:#fff; border:none; padding:12px 22px; border-radius:5px; cursor:pointer;
+  font-weight:600;
+}
+.btn-outline{background:transparent; border:2px solid var(--gold); color:var(--gold)}
+
+/* BROWSE RANGE */
+.browse{padding:60px 0 40px; text-align:center}
+.range-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:28px}
+.range-grid figure{background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+.range-grid img{width:100%; height:330px; object-fit:cover; display:block}
+.range-grid figcaption{padding:18px 0; font-weight:600; color:#444}
+
+/* PRODUCTS GRID */
+.products{padding:40px 0}
+.products-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:26px}
+.product{background:#fff; border-radius:6px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.product .thumb img{width:100%; height:210px; object-fit:cover; display:block}
+.product h3{padding:12px 16px 0; font-size:16px}
+.product .price{padding:8px 16px 16px; font-weight:700; color:#222}
+
+/* FEATURE SPLIT */
+.split{display:flex; gap:30px; align-items:center; padding:60px 0}
+.split-left{flex:1}
+.split-right{flex:1; display:flex; justify-content:center}
+.gallery-card{width:320px; border-radius:10px; overflow:hidden; position:relative}
+.gallery-card img{width:100%; height:360px; object-fit:cover}
+.gallery-caption{position:absolute; left:12px; bottom:16px; background:rgba(255,255,255,0.9); padding:12px; border-radius:6px; font-weight:700}
+
+/* MOSAIC */
+.mosaic{padding:50px 0}
+.mosaic-grid{display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:120px; gap:10px}
+.mosaic-grid img{width:100%; height:100%; object-fit:cover; display:block; border-radius:6px}
+
+/* FOOTER */
+.site-footer{background:#fff; border-top:1px solid #eee; padding:40px 0; margin-top:30px}
+.footer-grid{display:flex; gap:30px; align-items:center; justify-content:space-between}
+.footer-grid .brand{font-weight:800}
+.newsletter input{padding:10px 12px; border:1px solid #ddd; border-radius:4px; margin-right:8px}
+.copy{padding:18px 0; color:#999; text-align:center; border-top:1px solid #f2f2f2; margin-top:20px}
+
+/* Utility center */
+.center{text-align:center}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .range-grid{grid-template-columns:repeat(2,1fr)}
+  .mosaic-grid{grid-template-columns:repeat(4,1fr)}
+  .hero-card{right:6%; width:340px}
+}
+@media (max-width:700px){
+  .header-inner{padding:16px 0; gap:10px}
+  .main-nav{display:none}
+  .hero{height:60vh}
+  .hero-card{position:static; transform:none; margin: -70px auto 30px; width:92%}
+  .split{flex-direction:column}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .mosaic-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:420px){
+  .products-grid{grid-template-columns:1fr}
+  .range-grid{grid-template-columns:1fr}
+  .mosaic-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-card h1{font-size:22px}
+}
